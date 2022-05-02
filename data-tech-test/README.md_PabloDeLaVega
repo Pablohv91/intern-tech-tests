@@ -1,0 +1,41 @@
+I'm using Pycharm as my IDE.
+
+1. Change :
+'''
+orders = pd.read_csv('../orders.csv', header=0)
+'''
+../ to be able to read the csv file
+
+2. Change :
+'''
+orders[col_name] = pd.Series(value)
+'''
+Code to implement the Country's list, adding .Series just in case the list doesn't match the length of the rows.
+
+3. Change :
+'''
+ow_sc, high_sc = [amount for x, amount in orders.groupby(orders['amount'] >= threshold)]
+'''
+Code dividing the DataSeries into two, with the input provided before, in case the data is larger than expected and you want to analyse it from different points of view.
+
+4. Change :
+'''
+    amount_list = data["amount"]
+    threshold_list = [price for price in amount_list]
+    threshold_split = int(input(f"Which amount would you like to split it {threshold_list} ? "))
+    low_spending_customers, high_spending_customers = transformer.split_customers(data, threshold_split)
+'''
+Asking to choose from a the list amount spend -> esto no entiendo lo que quiere decir, quizas  "This asks you to choose from the list the amount spent" ?
+
+5. Change :
+'''
+sns.relplot(data=orders,
+            x="customer",
+            y="amount",
+            hue="date")
+plt.show()
+'''
+This allows you to see the data from a visual point of view and get different insights. For example, the fact that Sam and Sara both made an order on the same day.
+
+6. Change :
+Code to solve the bonus task
