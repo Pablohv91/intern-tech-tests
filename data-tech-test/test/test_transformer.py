@@ -30,9 +30,14 @@ class TestTransformer:
 
         enriched_orders = transformer.enrich_orders(df, 'testCol', 'testValue')
 
-        assert np.all(enriched_orders['testCol'] == ['testValue', 'testValue', 'testValue', 'testValue', 'testValue', 'testValue', 'testValue', 'testValue'])
+        assert np.all(enriched_orders['testCol'] == ['testValue', 'testValue', 'testValue',
+                                                     'testValue', 'testValue', 'testValue',
+                                                     'testValue', 'testValue'])
 
     # TODO: Task 2
     @mark.notimplemented
     def test__split_customers(self, order_data_instance, order_countries):
         df = order_data_instance
+        transformer = Transformer()
+
+        
